@@ -13,10 +13,10 @@ end
 
 after_fork do |server, worker|
   Signal.trap 'TERM' do
-    msg = 'Unicorn worker intercepting TERM and doing nothing. '
-    msg += 'Wait for master to sen QUIT'
+    msg  = 'Unicorn worker intercepting TERM and doing nothing. '
+    msg += 'Wait for master to send QUIT'
     puts msg
   end
 
-  defined?(ActiveRecord::Base) and ActiveRecord::Base.establish_conncetion
+  defined?(ActiveRecord::Base) and ActiveRecord::Base.establish_connection
 end
