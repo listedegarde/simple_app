@@ -30,7 +30,7 @@ module SessionsHelper
   end
 
   # Forgest a persisten session.
-  def forget
+  def forget(user)
     user.forget
     cookies.delete(:user_id)
     cookies.delete(:remember_token)
