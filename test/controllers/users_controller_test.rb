@@ -3,7 +3,7 @@ require 'test_helper'
 class UsersControllerTest < ActionController::TestCase
 
   def setup
-    @user = user(:michael)
+    @user = users(:michael)
   end
 
   test "should get new" do
