@@ -15,7 +15,7 @@ class MicropostsControllerTest < ActionController::TestCase
 
   test "should redirect destroy when not logged in" do
     assert_no_difference 'Micropost.count' do
-      delete :destory, id: @micropost
+      delete :destroy, id: @micropost
     end
     assert_redirected_to login_url
   end
