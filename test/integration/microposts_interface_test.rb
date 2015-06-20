@@ -17,7 +17,7 @@ class MicropostsInterfaceTest < ActionDispatch::IntegrationTest
     assert_select 'div#error_explanation'
     # Valid submission
     content = "This micropost really ties the room together"
-    assert_different 'Micropost.count' , 1 do
+    assert_difference 'Micropost.count' , 1 do
       post microposts_path, micropost: { content: content }
     end
     assert_redirected_to root_url
